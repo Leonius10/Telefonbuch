@@ -10,15 +10,15 @@ def index():
 
 @app.route("/add", methods=["POST"])
 def add():
-    name = request.form["name"]
-    nummer = request.form["nummer"]
-    Telefonbuch[name] = nummer
+    essen = request.form["essen"]
+    anzahl = request.form["anzahl"]
+    Telefonbuch[essen] = anzahl
     return index()
 
 @app.route("/delete/<name>")
-def delete(name):
+def delete(essen):
     if name in Telefonbuch:
-        del Telefonbuch[name]
+        del Telefonbuch[essen]
     return index()
 
 if __name__ == "__main__":
